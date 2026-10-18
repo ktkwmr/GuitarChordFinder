@@ -20,8 +20,10 @@
   ドメイン直下（`/`、`robots.txt`、ルートの `sitemap.xml`、`_redirects`、ルートの 404）は ChordTransposer の Worker にある。このアプリの sitemap は `/guitarchordfinder/sitemap.xml`。
 
 ## ルール
-- 手で編集するのはアプリ本体 `public/guitarchordfinder/index.html` と `scripts/`。生成ファイル（`public/guitarchordfinder/ja/index.html`、`about/`・`privacy/` とその `ja/`、`public/guitarchordfinder/sitemap.xml`）は編集せず、`node scripts/build-ja.mjs` と `node scripts/build-pages.mjs` で作り直す（`--check` で確認）。
+- 手で編集するのはアプリ本体 `public/guitarchordfinder/index.html` と `scripts/`。生成ファイル（`public/guitarchordfinder/ja/index.html`、記事・情報ページ `<slug>/` とその `ja/`、`public/guitarchordfinder/sitemap.xml`）は編集せず、`node scripts/build-ja.mjs` と `node scripts/build-pages.mjs` で作り直す（`--check` で確認）。
 - 画面の文言は `index.html` の `I18N`（en / ja）に書き、要素には `data-i18n` / `data-i18n-html` / `data-i18n-attr` を付ける（`build-ja.mjs` が日本語ページの本文を置き換える）。JS で作る文言は `t()` を使う。
+- コードの計算（探索・コード名・ダイアグラム）は `public/guitarchordfinder/chords.js` にあり、アプリと記事（`scripts/pages/chords.mjs`）が共用する。記事のコード表は手で書かず、これで計算する。
+- 記事を追加・変更したら、PR のプレビューで人間が内容を確認してからマージする（ベースライン §10-7）。確認してほしい点を `docs/article-review.md` に書き、PR 本文にも載せる。見た目を変えたら `node scripts/render-guide-images.mjs` で画面写真を撮り直す。
 - 外部ホストを足したら `public/_headers` の CSP と、プライバシーの説明（`scripts/pages/privacy.mjs`、アプリ内の `privacy.body`、README）を同じ PR で直す。
 - 作業はブランチ → PR → Cloudflare のプレビュービルド確認 → squash マージ。
 - 本番サイト・Cloudflare 管理画面・外部 CDN にはこの環境から届かないことが多い。確かめられなかったことは「未確認」と書き、ユーザーに確認手順を伝える。
