@@ -151,6 +151,9 @@
 |---|---|---|---|
 | 13-1 | 本番デプロイ | ✅ | |
 | 13-4 | GitHub の About | ✅ | Description・Website・Topics 設定済み |
+| 13-2 | 本番の動作確認（日英・スマホ・PC・PWA・オフライン） | ✅ | |
+| 13-3 | iPhone 実機 | ✅ | |
+| 14-1, 14-2 | Search Console（サイトマップ送信・インデックス登録リクエスト） | ✅ | |
 
 13・14 のその他は 👤 待ち（下の表）。15（AdSense）は未着手。
 
@@ -158,8 +161,5 @@
 
 | # | 内容 | 手順 | 終わったかの確かめ方 |
 |---|---|---|---|
-| 2 | 本番の表示確認 | https://ktkwmr.com/guitarchordfinder/ と /ja/ を PC・スマホで開く。ホーム画面に追加して起動、機内モードで開けるか | 画面が出て、音が鳴り、オフラインで開ける |
-| 4 | Search Console | https://search.google.com/search-console → ktkwmr.com → サイトマップに `https://ktkwmr.com/guitarchordfinder/sitemap.xml` を送信。URL 検査で `/guitarchordfinder/` と `/guitarchordfinder/ja/` のインデックス登録をリクエスト | サイトマップが「成功しました」 |
-| 7 | iPhone 実機 | 音が鳴るか（消音スイッチがオンだと鳴らないことがある）、ホーム画面アプリの見切れ | |
 | 8 | 日本語の検索用タイトル・説明の確認 | `scripts/build-ja.mjs` 冒頭の `TITLE` / `DESCRIPTION` | 直したいところを Claude に伝える |
 | 9 | X・LINE でカード表示 | URL を貼る | 画像付きカードが出る |
