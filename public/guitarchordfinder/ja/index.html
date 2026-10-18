@@ -142,7 +142,9 @@
     @media (hover: hover) { .card:hover { border-color: var(--ink); } }
     .card.playing { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
     .card svg { width: 100%; max-width: 170px; height: auto; display: block; }
-    .card .tab { font-family: var(--mono); font-weight: 700; font-size: 15px; white-space: nowrap; }
+    /* Up to 17 characters ("10 12 12 11 10 10") must fit in a card two columns wide on a 360px phone */
+    .card .tab { font-family: var(--mono); font-weight: 700; font-size: 13px; white-space: nowrap; }
+    @media (max-width: 380px) { .card .tab { font-size: 12px; } }
     .card .name { font-size: 12px; color: var(--muted); font-family: var(--mono); }
     .card .play { font-size: 11px; color: var(--subtle); }
     .card.none { cursor: default; color: var(--subtle); font-size: 12px; padding: 28px 12px; border-style: dashed; }
@@ -169,7 +171,7 @@
     .rev-left { border: 1px solid var(--line-strong); border-radius: 12px; padding: 10px; width: 180px; max-width: 100%; }
     .rev-left svg { width: 100%; height: auto; display: block; }
     .rev-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
-    .rev-tab { font-family: var(--mono); font-weight: 700; font-size: 18px; white-space: nowrap; }
+    .rev-tab { font-family: var(--mono); font-weight: 700; font-size: 15px; }
     .rev-notes { font-family: var(--mono); font-size: 13px; color: var(--muted); }
     .rev-names { display: flex; flex-direction: column; gap: 6px; }
     .rev-names .main { font-size: 28px; font-weight: 700; line-height: 1.1; }
@@ -741,7 +743,7 @@
       function diagram(sh,barre,q,rootOverride){
         const RT=rootOverride===undefined?state.root:rootOverride;
         const bassStr=sh.findIndex(f=>f>=0); // only the lowest note is black
-        const W=150,H=170,L=22,T=34,SX=21,FH=24,NF=5;
+        const W=150,H=176,L=22,T=34,SX=21,FH=24,NF=5;
         const fretted=sh.filter(f=>f>0);
         const mx=fretted.length?Math.max(...fretted):0, mn=fretted.length?Math.min(...fretted):0;
         const start=mx<=5?1:mn;
@@ -771,12 +773,11 @@
           } else {
             const y=T+(f-start+0.5)*FH;
             s+=`<circle cx="${x}" cy="${y}" r="9" fill="${i===bassStr?'var(--ink)':'var(--paper)'}" stroke="var(--ink)" stroke-width="1.5"/>`;
-            s+=`<text x="${x}" y="${y+3.5}" text-anchor="middle" font-size="${lab.length>1?8.5:10}" font-weight="700" fill="${i===bassStr?'var(--paper)':'var(--ink)'}" font-family="Consolas,Menlo,monospace">${lab}</text>`;
+            s+=`<text x="${x}" y="${y+3.5}" text-anchor="middle" font-size="${lab.length>2?7:lab.length>1?8.5:10}" font-weight="700" fill="${i===bassStr?'var(--paper)':'var(--ink)'}" font-family="Consolas,Menlo,monospace">${lab}</text>`;
           }
-          // Bottom rows: note name and interval
+          // Bottom row: note name
           const name=f<0?"":spell(pc,RT);
           s+=`<text x="${x}" y="${T+FH*NF+16}" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="Consolas,Menlo,monospace">${name}</text>`;
-          s+=`<text x="${x}" y="${T+FH*NF+29}" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="Consolas,Menlo,monospace" opacity=".8">${f<0?"":lab}</text>`;
         }
         return s+"</svg>";
       }
