@@ -34,7 +34,7 @@ export default {
 <h2 id="storage">2. Data saved in your browser</h2>
 <p>The following data is saved in your browser's storage on your device. It is not sent to us.</p>
 <ul>
-  <li><b>Your settings:</b> the tuning, chord, slash-chord bass, options, playback mode, the selected tab, and the shape on the fretboard, so you can continue next time.</li>
+  <li><b>Your settings:</b> the tuning, chord, slash-chord bass, playback mode, the selected tab, and the shape on the fretboard, so you can continue next time.</li>
   <li><b>App files:</b> the pages and files of this site you have opened, so the app works offline.</li>
 </ul>
 <p>To delete this data, clear this site's data (site data, cookies, and storage for ktkwmr.com) in your browser settings.</p>
@@ -94,7 +94,7 @@ export default {
 <h2 id="storage">2. ブラウザに保存するデータ</h2>
 <p>次のデータを、お使いの端末のブラウザ内に保存します。運営者に送られることはありません。</p>
 <ul>
-  <li><b>設定：</b>次に開いたときに続きから使えるよう、チューニング、コード、分数コードのベース、条件、再生のしかた、表示中のタブ、指板の押さえ方を保存します。</li>
+  <li><b>設定：</b>次に開いたときに続きから使えるよう、チューニング、コード、分数コードのベース、再生のしかた、表示中のタブ、指板の押さえ方を保存します。</li>
   <li><b>アプリのファイル：</b>オフラインでも使えるよう、開いた本サイトのページやファイルを保存します。</li>
 </ul>
 <p>消したいときは、ブラウザの設定でこのサイト（ktkwmr.com）のデータ（サイトデータ・Cookie・ストレージ）を削除してください。</p>

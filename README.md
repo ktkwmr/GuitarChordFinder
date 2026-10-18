@@ -24,11 +24,11 @@ A web app that finds guitar chord shapes in any tuning. Choose a tuning (DADGAD,
 ## Privacy / プライバシー
 
 - Everything (the search, the chord names, and the sound) runs only in your browser. Nothing you choose is sent to a server. The app has no accounts, cookies, ads, or third-party libraries.
-- For offline use, the app is saved in your browser's storage, together with your settings (tuning, chord, options, and the shape on the fretboard). Clear this site's data to remove them.
+- For offline use, the app is saved in your browser's storage, together with your settings (tuning, chord, playback mode, and the shape on the fretboard). Clear this site's data to remove them.
 - The site is hosted on Cloudflare, which keeps standard access logs (IP address, time, requested page) for operation and security. Page views are counted with Cloudflare Web Analytics, which uses no cookies.
 
 - 検索・コード名の判定・音の再生はすべてブラウザ内で行い、選んだ内容はサーバーに送信されません。アカウント登録・Cookie・広告・外部ライブラリはありません。
-- オフラインで使えるよう、アプリ本体と設定（チューニング・コード・条件・指板の押さえ方）をブラウザ内に保存します。サイトデータを削除すると消えます。
+- オフラインで使えるよう、アプリ本体と設定（チューニング・コード・再生のしかた・指板の押さえ方）をブラウザ内に保存します。サイトデータを削除すると消えます。
 - サイトは Cloudflare で配信しており、運用・セキュリティのために標準的なアクセスログ（IP アドレス、日時、アクセスしたページ）が記録されます。閲覧数は Cookie を使わない Cloudflare Web Analytics で集計しています。
 
 The same notice is shown in the app under ⚙ → **Privacy**. The full privacy policy is at `/guitarchordfinder/privacy/` (Japanese: `/guitarchordfinder/ja/privacy/`), and the operator information is at `/guitarchordfinder/about/`.

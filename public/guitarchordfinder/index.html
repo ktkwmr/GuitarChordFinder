@@ -117,10 +117,6 @@
     @media (hover: hover) { .strings select:hover { border-color: var(--ink); } }
     .strings .off { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--subtle); }
     .strings .off.changed { color: var(--ink); font-weight: 700; }
-    .opts label { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
-    .opts input[type=checkbox] { accent-color: var(--ink); width: 16px; height: 16px; margin: 0; }
-    .opts input[type=range] { flex: 1; accent-color: var(--ink); }
-    .opts .opt-val { font-family: var(--mono); font-weight: 700; min-width: 2ch; text-align: right; }
     .open-id { font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
     .open-id b { color: var(--ink); font-family: var(--mono); }
 
@@ -246,11 +242,6 @@
             <div class="chips" id="slashes"></div>
             <p class="hint" data-i18n="slash.hint">Finds shapes with this note as the lowest note (for example, D/F#).</p>
           </div>
-          <div class="group opts">
-            <span class="label" data-i18n="options">Options</span>
-            <label><input type="checkbox" id="optBass" checked> <span data-i18n="opt.bass">Root as the lowest note only</span></label>
-            <label><span data-i18n="opt.max">Highest fret</span> <input type="range" id="optMax" min="5" max="17" value="14"> <span id="optMaxV" class="opt-val">14</span></label>
-          </div>
           <div class="group">
             <span class="label" data-i18n="playback">Playback</span>
             <div class="chips" id="playModes"></div>
@@ -304,7 +295,6 @@
         <li><b>Shapes</b> – Up to six natural shapes are found for each position: low (open strings), middle (around frets 3–6), and high (fret 7 and up). Tap “Other shape” to see the next one.</li>
         <li><b>Listen</b> – Tap a diagram to hear it. Under Playback, choose note by note, chord, or both.</li>
         <li><b>Shape → chord</b> – Press frets on the fretboard to see the name of the chord, with other possible names.</li>
-        <li><b>Options</b> – Limit the lowest note to the root, or change the highest fret to search.</li>
       </ol>
     </div>
     <div class="dlg-actions">
@@ -317,7 +307,7 @@
     <div class="help-body">
       <ul class="help-list" data-i18n-html="privacy.body">
         <li><b>Everything stays on your device</b> – Chords and shapes are calculated and played only in your browser. Nothing you choose is sent to a server. This app has no accounts, cookies, or ads.</li>
-        <li><b>Data saved in your browser</b> – To work offline, the app is saved in your browser's storage. Your tuning, chord, options, and the shape on the fretboard are also saved there, so you can pick up where you left off next time. You can delete them by clearing this site's data in your browser settings.</li>
+        <li><b>Data saved in your browser</b> – To work offline, the app is saved in your browser's storage. Your tuning, chord, playback mode, and the shape on the fretboard are also saved there, so you can pick up where you left off next time. You can delete them by clearing this site's data in your browser settings.</li>
         <li><b>Server logs and page views</b> – This site is hosted on Cloudflare. Standard access logs (such as IP address, time, and the requested page) are kept for operation and security. Cloudflare Web Analytics counts page views without cookies (the page URL, referrer, browser information, and page load time).</li>
         <li><b>Contact</b> – Questions and feedback: <a href="https://github.com/ktkwmr/GuitarChordFinder/issues" target="_blank" rel="noopener">GitHub Issues</a>.</li>
         <li><b>Full policy</b> – See the <a href="/guitarchordfinder/privacy/">privacy policy</a> and <a href="/guitarchordfinder/about/">about this site</a>.</li>
@@ -358,9 +348,6 @@
           "quality": "Chord type",
           "slash": "Bass note for a slash chord (optional)",
           "slash.hint": "Finds shapes with this note as the lowest note (for example, D/F#).",
-          "options": "Options",
-          "opt.bass": "Root as the lowest note only",
-          "opt.max": "Highest fret",
           "playback": "Playback",
           "mode": "Mode",
           "tab.find": "Chord → shapes",
@@ -375,8 +362,8 @@
           "menu.help": "How to use",
           "menu.privacy": "Privacy",
           "menu.about": "About",
-          "help.body": "<li><b>Tuning</b> – Choose a preset such as DADGAD or Open G, or set each string yourself. Below the strings you can see the chord the open strings make.</li>\n        <li><b>Chord</b> – Choose the root and the chord type. For a slash chord such as D/F#, also choose the bass note.</li>\n        <li><b>Shapes</b> – Up to six natural shapes are found for each position: low (open strings), middle (around frets 3–6), and high (fret 7 and up). Tap “Other shape” to see the next one.</li>\n        <li><b>Listen</b> – Tap a diagram to hear it. Under Playback, choose note by note, chord, or both.</li>\n        <li><b>Shape → chord</b> – Press frets on the fretboard to see the name of the chord, with other possible names.</li>\n        <li><b>Options</b> – Limit the lowest note to the root, or change the highest fret to search.</li>",
-          "privacy.body": "<li><b>Everything stays on your device</b> – Chords and shapes are calculated and played only in your browser. Nothing you choose is sent to a server. This app has no accounts, cookies, or ads.</li>\n        <li><b>Data saved in your browser</b> – To work offline, the app is saved in your browser's storage. Your tuning, chord, options, and the shape on the fretboard are also saved there, so you can pick up where you left off next time. You can delete them by clearing this site's data in your browser settings.</li>\n        <li><b>Server logs and page views</b> – This site is hosted on Cloudflare. Standard access logs (such as IP address, time, and the requested page) are kept for operation and security. Cloudflare Web Analytics counts page views without cookies (the page URL, referrer, browser information, and page load time).</li>\n        <li><b>Contact</b> – Questions and feedback: <a href=\"https://github.com/ktkwmr/GuitarChordFinder/issues\" target=\"_blank\" rel=\"noopener\">GitHub Issues</a>.</li>\n        <li><b>Full policy</b> – See the <a href=\"/guitarchordfinder/privacy/\">privacy policy</a> and <a href=\"/guitarchordfinder/about/\">about this site</a>.</li>",
+          "help.body": "<li><b>Tuning</b> – Choose a preset such as DADGAD or Open G, or set each string yourself. Below the strings you can see the chord the open strings make.</li>\n        <li><b>Chord</b> – Choose the root and the chord type. For a slash chord such as D/F#, also choose the bass note.</li>\n        <li><b>Shapes</b> – Up to six natural shapes are found for each position: low (open strings), middle (around frets 3–6), and high (fret 7 and up). Tap “Other shape” to see the next one.</li>\n        <li><b>Listen</b> – Tap a diagram to hear it. Under Playback, choose note by note, chord, or both.</li>\n        <li><b>Shape → chord</b> – Press frets on the fretboard to see the name of the chord, with other possible names.</li>",
+          "privacy.body": "<li><b>Everything stays on your device</b> – Chords and shapes are calculated and played only in your browser. Nothing you choose is sent to a server. This app has no accounts, cookies, or ads.</li>\n        <li><b>Data saved in your browser</b> – To work offline, the app is saved in your browser's storage. Your tuning, chord, playback mode, and the shape on the fretboard are also saved there, so you can pick up where you left off next time. You can delete them by clearing this site's data in your browser settings.</li>\n        <li><b>Server logs and page views</b> – This site is hosted on Cloudflare. Standard access logs (such as IP address, time, and the requested page) are kept for operation and security. Cloudflare Web Analytics counts page views without cookies (the page URL, referrer, browser information, and page load time).</li>\n        <li><b>Contact</b> – Questions and feedback: <a href=\"https://github.com/ktkwmr/GuitarChordFinder/issues\" target=\"_blank\" rel=\"noopener\">GitHub Issues</a>.</li>\n        <li><b>Full policy</b> – See the <a href=\"/guitarchordfinder/privacy/\">privacy policy</a> and <a href=\"/guitarchordfinder/about/\">about this site</a>.</li>",
           "about.license": "© 2026 ktkwmr · Licensed under the <a href=\"https://github.com/ktkwmr/GuitarChordFinder/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener\">MIT License</a> · <a href=\"/guitarchordfinder/about/\">About this site</a>",
           "err.license": "Could not load the license information.\nPlease check your connection and try again.",
           "q.major": "Major",
@@ -425,9 +412,6 @@
           "quality": "コードの種類",
           "slash": "分数コードのベース（任意）",
           "slash.hint": "選ぶと、その音を最低音にした押さえ方（例: D/F#）を探します。",
-          "options": "条件",
-          "opt.bass": "最低音をルートに限定",
-          "opt.max": "最高フレット",
           "playback": "再生のしかた",
           "mode": "モード",
           "tab.find": "コード → 押さえ方",
@@ -442,8 +426,8 @@
           "menu.help": "使い方",
           "menu.privacy": "プライバシー",
           "menu.about": "このアプリについて",
-          "help.body": "<li><b>チューニング</b> – DADGAD やオープンG などのプリセットを選ぶか、弦ごとに音を設定します。弦の下に、開放弦を鳴らしたときのコード名が表示されます。</li>\n<li><b>コード</b> – ルートとコードの種類を選びます。D/F# のような分数コードは、ベースの音も選びます。</li>\n<li><b>押さえ方</b> – ロー（開放弦）・ミドル（3〜6フレット付近）・ハイ（7フレット以上）のポジションごとに、自然な押さえ方を最大 6 つ探します。「別の形」で次の候補を表示します。</li>\n<li><b>音を聞く</b> – ダイアグラムを押すと音が鳴ります。「再生のしかた」で、1音ずつ・和音・その両方を選べます。</li>\n<li><b>押さえ方 → コード</b> – 指板のマスを押すと、そのコード名と別の解釈が表示されます。</li>\n<li><b>条件</b> – 最低音をルートに限るか、探す範囲の最高フレットを変えられます。</li>",
-          "privacy.body": "<li><b>すべて端末の中で動きます</b> – コードや押さえ方の計算と音の再生は、ブラウザ内だけで行います。選んだ内容がサーバーに送信されることはありません。アカウント登録・Cookie・広告もありません。</li>\n<li><b>ブラウザに保存するデータ</b> – オフラインで使えるよう、アプリ本体をブラウザ内に保存します。次に開いたときに続きから使えるよう、チューニング・コード・条件・指板の押さえ方も保存します。ブラウザの設定でこのサイトのデータを削除すると消えます。</li>\n<li><b>サーバーのログと閲覧数</b> – このサイトは Cloudflare で配信しています。運用とセキュリティのため、標準的なアクセスログ（IP アドレス、日時、アクセスしたページなど）が記録されます。また、Cloudflare Web Analytics で、Cookie を使わずにページの閲覧数を集計しています（閲覧したページの URL、参照元、ブラウザの情報、ページの表示速度）。</li>\n<li><b>お問い合わせ</b> – ご質問やご意見は <a href=\"https://github.com/ktkwmr/GuitarChordFinder/issues\" target=\"_blank\" rel=\"noopener\">GitHub Issues</a> へどうぞ。</li>\n<li><b>詳しくは</b> – <a href=\"/guitarchordfinder/ja/privacy/\">プライバシーポリシー</a>と<a href=\"/guitarchordfinder/ja/about/\">運営者情報</a>をご覧ください。</li>",
+          "help.body": "<li><b>チューニング</b> – DADGAD やオープンG などのプリセットを選ぶか、弦ごとに音を設定します。弦の下に、開放弦を鳴らしたときのコード名が表示されます。</li>\n<li><b>コード</b> – ルートとコードの種類を選びます。D/F# のような分数コードは、ベースの音も選びます。</li>\n<li><b>押さえ方</b> – ロー（開放弦）・ミドル（3〜6フレット付近）・ハイ（7フレット以上）のポジションごとに、自然な押さえ方を最大 6 つ探します。「別の形」で次の候補を表示します。</li>\n<li><b>音を聞く</b> – ダイアグラムを押すと音が鳴ります。「再生のしかた」で、1音ずつ・和音・その両方を選べます。</li>\n<li><b>押さえ方 → コード</b> – 指板のマスを押すと、そのコード名と別の解釈が表示されます。</li>",
+          "privacy.body": "<li><b>すべて端末の中で動きます</b> – コードや押さえ方の計算と音の再生は、ブラウザ内だけで行います。選んだ内容がサーバーに送信されることはありません。アカウント登録・Cookie・広告もありません。</li>\n<li><b>ブラウザに保存するデータ</b> – オフラインで使えるよう、アプリ本体をブラウザ内に保存します。次に開いたときに続きから使えるよう、チューニング・コード・再生のしかた・指板の押さえ方も保存します。ブラウザの設定でこのサイトのデータを削除すると消えます。</li>\n<li><b>サーバーのログと閲覧数</b> – このサイトは Cloudflare で配信しています。運用とセキュリティのため、標準的なアクセスログ（IP アドレス、日時、アクセスしたページなど）が記録されます。また、Cloudflare Web Analytics で、Cookie を使わずにページの閲覧数を集計しています（閲覧したページの URL、参照元、ブラウザの情報、ページの表示速度）。</li>\n<li><b>お問い合わせ</b> – ご質問やご意見は <a href=\"https://github.com/ktkwmr/GuitarChordFinder/issues\" target=\"_blank\" rel=\"noopener\">GitHub Issues</a> へどうぞ。</li>\n<li><b>詳しくは</b> – <a href=\"/guitarchordfinder/ja/privacy/\">プライバシーポリシー</a>と<a href=\"/guitarchordfinder/ja/about/\">運営者情報</a>をご覧ください。</li>",
           "about.license": "© 2026 ktkwmr · <a href=\"https://github.com/ktkwmr/GuitarChordFinder/blob/main/LICENSE\" target=\"_blank\" rel=\"noopener\">MIT ライセンス</a>で公開しています · <a href=\"/guitarchordfinder/ja/about/\">運営者情報</a>",
           "err.license": "ライセンス情報を読み込めませんでした。\n接続を確認して、もう一度お試しください。",
           "q.major": "メジャー",
@@ -587,10 +571,12 @@
         {name:"CGDGBD", notes:[0,7,2,7,11,2]},
       ];
 
-      const state = {tuning:[4,9,2,7,11,4], root:0, qual:"", bassRoot:true, slash:null, custom:false, playMode:"both", mode:"find", rev:[0,0,0,0,0,0], noMute:false, maxFret:14};
+      const state = {tuning:[4,9,2,7,11,4], root:0, qual:"", slash:null, custom:false, playMode:"both", mode:"find", rev:[0,0,0,0,0,0]};
+      // Shapes are searched up to this fret, with the root (or the chosen slash-chord bass) as the lowest note
+      const MAX_FRET = 14;
 
       // ---------- Saved state ----------
-      // Tuning, chord, options, playback, mode, and the fretboard shape are saved in the browser and restored next time
+      // Tuning, chord, playback, mode, and the fretboard shape are saved in the browser and restored next time
       const STATE_KEY = "guitarchordfinder-state";
       const isPc = (v) => Number.isInteger(v) && v >= 0 && v < 12;
       function loadState() {
@@ -601,9 +587,7 @@
         if (isPc(s.root)) state.root = s.root;
         if (QUALS.some((q) => q.id === s.qual)) state.qual = s.qual;
         if (s.slash === null || isPc(s.slash)) state.slash = s.slash;
-        if (typeof s.bassRoot === "boolean") state.bassRoot = s.bassRoot;
         if (typeof s.custom === "boolean") state.custom = s.custom;
-        if (Number.isInteger(s.maxFret) && s.maxFret >= 5 && s.maxFret <= 17) state.maxFret = s.maxFret;
         if (["both", "arp", "chord"].includes(s.playMode)) state.playMode = s.playMode;
         if (s.mode === "find" || s.mode === "rev") state.mode = s.mode;
         if (Array.isArray(s.rev) && s.rev.length === 6 && s.rev.every((f) => Number.isInteger(f) && f >= -1 && f <= 14)) state.rev = s.rev.slice();
@@ -611,8 +595,8 @@
       function saveState() {
         try {
           localStorage.setItem(STATE_KEY, JSON.stringify({
-            tuning: state.tuning, root: state.root, qual: state.qual, slash: state.slash, bassRoot: state.bassRoot,
-            custom: state.custom, maxFret: state.maxFret, playMode: state.playMode, mode: state.mode, rev: state.rev
+            tuning: state.tuning, root: state.root, qual: state.qual, slash: state.slash,
+            custom: state.custom, playMode: state.playMode, mode: state.mode, rev: state.rev
           }));
         } catch (e) {}
       }
@@ -648,9 +632,9 @@
         const required=q.iv.filter(i=>!(q.opt||[]).includes(i)).map(i=>(root+i)%12);
         if(slash!==null){ if(!pcs.includes(slash)) pcs.push(slash); required.push(slash); }
         const bassTarget=slash!==null?slash:root;
-        const tun=state.tuning, maxF=state.maxFret;
+        const tun=state.tuning, maxF=MAX_FRET;
         const cands=tun.map(open=>{
-          const c=state.noMute?[]:[-1];
+          const c=[-1];
           for(let f=0;f<=maxF;f++) if(pcs.includes((open+f)%12)) c.push(f);
           return c;
         });
@@ -707,7 +691,7 @@
           }
           const bassPc=(tun[firstSound]+sh[firstSound])%12;
           if(slash!==null){ if(bassPc!==slash) return; }
-          else if(state.bassRoot && bassPc!==root) return;
+          else if(bassPc!==root) return;
           const frets=fretted.map(i=>sh[i]);
           const span=frets.length?Math.max(...frets)-Math.min(...frets):0;
           const pos=frets.length?Math.min(...frets):0;
@@ -872,8 +856,6 @@
           if(r===state.root) return;
           box.appendChild(chip("/"+spell(r,state.root),state.slash===r,()=>{state.slash=r; clearPick(); buildSlashes(); renderResults();},true));
         });
-        $("optBass").disabled=state.slash!==null;
-        $("optBass").parentElement.style.opacity=state.slash!==null?.5:1;
       }
       function buildQuals(){
         const box=$("quals"); box.innerHTML="";
@@ -1007,8 +989,6 @@
         clearPick();
         buildPresets(); buildStrings(); buildRoots(); buildQuals(); if(state.slash===state.root) state.slash=null; buildSlashes(); buildPlayModes(); renderOpen(); renderResults(); renderRev();
       }
-      $("optBass").onchange=e=>{state.bassRoot=e.target.checked; clearPick(); renderResults();};
-      $("optMax").oninput=e=>{state.maxFret=+e.target.value; $("optMaxV").textContent=e.target.value; clearPick(); renderResults();};
 
       // ---------- Settings (gear) menu: How to use / Privacy / About ----------
       const settingsBtn = $("settingsBtn");
@@ -1093,8 +1073,6 @@
 
       applyI18n();
       loadState();
-      $("optBass").checked = state.bassRoot;
-      $("optMax").value = state.maxFret; $("optMaxV").textContent = state.maxFret;
       renderAll();
       setMode(state.mode);
     })();
