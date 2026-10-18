@@ -71,7 +71,7 @@
 | 5-3 | OGP | ✅ | |
 | 5-4 | og-image.png | ✅ | `scripts/og-image.html` |
 | 5-5 | JSON-LD | ✅ | |
-| 5-6 | robots.txt / sitemap.xml | ⚠️ | sitemap は `/guitarchordfinder/sitemap.xml` に生成。ChordTransposer の `robots.txt` に Sitemap 行を足す必要あり（下の作業 3） |
+| 5-6 | robots.txt / sitemap.xml | ✅ | sitemap は `/guitarchordfinder/sitemap.xml` に生成。ChordTransposer の `robots.txt` に Sitemap 行を追加済み（ktkwmr/ChordTransposer#19） |
 | 5-7 | `<h1>` | ✅ | ツールバーのアプリ名 |
 | 5-8 | 画面に見える説明文 | ✅ | 冒頭の説明（無料・登録不要・オフライン） |
 | 5-9 | リダイレクト | ✅ | |
@@ -155,7 +155,6 @@
 |---|---|---|---|
 | 1 | Cloudflare に Worker を作る | https://dash.cloudflare.com → Workers & Pages → Create → Import a repository → `ktkwmr/GuitarChordFinder`。本番ブランチ `main`、Build command は空（`wrangler.jsonc` の `build.command` が使われる） | Deployments が Success。Settings → Domains & Routes に `ktkwmr.com/guitarchordfinder*` が出る（`wrangler.jsonc` の `routes` から自動設定。出なければ Add → Route で同じ値を追加） |
 | 2 | 本番の表示確認 | https://ktkwmr.com/guitarchordfinder/ と /ja/ を PC・スマホで開く。ホーム画面に追加して起動、機内モードで開けるか | 画面が出て、音が鳴り、オフラインで開ける |
-| 3 | ChordTransposer の robots.txt に sitemap を追加 | ChordTransposer の `public/robots.txt` に `Sitemap: https://ktkwmr.com/guitarchordfinder/sitemap.xml` を 1 行足す（Claude に頼めば PR を出す） | https://ktkwmr.com/robots.txt に 2 行目が出る |
 | 4 | Search Console | https://search.google.com/search-console → ktkwmr.com → サイトマップに `https://ktkwmr.com/guitarchordfinder/sitemap.xml` を送信。URL 検査で `/guitarchordfinder/` と `/guitarchordfinder/ja/` のインデックス登録をリクエスト | サイトマップが「成功しました」 |
 | 5 | GitHub の About | https://github.com/ktkwmr/GuitarChordFinder の右の ⚙（PC か「デスクトップ用 Web サイトを表示」）。Website: `https://ktkwmr.com/guitarchordfinder/`、Topics: `guitar` `chords` `alternate-tunings` `dadgad` `chord-finder` `pwa` `music` | About に URL と Topics が出る（Description は作成時に設定済み） |
 | 6 | 解析の確認 | 本番で DevTools → Network を `cloudflareinsights` で絞る | `beacon.min.js` と `rum` が 200/204 |
