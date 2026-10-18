@@ -36,7 +36,7 @@
 | 2-8 | LICENSE | ✅ | |
 | 2-9 | CLAUDE.md | ✅ | |
 | 2-10 | バージョン番号なし・キャッシュ名固定 | ✅ | |
-| 2-11 | Cloudflare に接続・ルート設定 | ✅ | 2026-10-18。本番で全ページ 200、不明 URL は 404、CSP ヘッダーあり、ChordTransposer に影響なしを確認 |
+| 2-11 | Cloudflare に接続・ルート設定 | ✅ | 2026-10-18。本番で全ページ 200、不明 URL は 404、CSP ヘッダーあり、ChordTransposer に影響なしを確認。当初は Cloudflare の GitHub アプリにこのリポジトリのアクセス権がなく push が自動デプロイされなかった（Builds に「disconnected from your Git account」）。GitHub の Installations で許可して解消し、コミットに「Workers Builds: guitarchordfinder」が付くことを確認 |
 | 2-12 | キャッシュ | ✅ | |
 
 ## 3. PWA
