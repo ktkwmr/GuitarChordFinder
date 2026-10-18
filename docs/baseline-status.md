@@ -36,7 +36,7 @@
 | 2-8 | LICENSE | ✅ | |
 | 2-9 | CLAUDE.md | ✅ | |
 | 2-10 | バージョン番号なし・キャッシュ名固定 | ✅ | |
-| 2-11 | Cloudflare に接続・ルート設定 | 👤 待ち | |
+| 2-11 | Cloudflare に接続・ルート設定 | ✅ | 2026-10-18。本番で全ページ 200、不明 URL は 404、CSP ヘッダーあり、ChordTransposer に影響なしを確認 |
 | 2-12 | キャッシュ | ✅ | |
 
 ## 3. PWA
@@ -133,7 +133,7 @@
 | 11-1 | サイト登録・token | ✅ | ChordTransposer と同じ token |
 | 11-2 | beacon と CSP | ✅ | アプリと生成ページ（404 以外） |
 | 11-3 | プライバシーの記述 | ✅ | |
-| 11-4 | 本番での送信確認 | 👤 待ち | |
+| 11-4 | 本番での送信確認 | ✅ | `beacon.min.js` 200・`rum` 204 を確認 |
 
 ## 12. CI
 
@@ -153,11 +153,9 @@
 
 | # | 内容 | 手順 | 終わったかの確かめ方 |
 |---|---|---|---|
-| 1 | Cloudflare に Worker を作る | https://dash.cloudflare.com → Workers & Pages → Create → Import a repository → `ktkwmr/GuitarChordFinder`。本番ブランチ `main`、Build command は空（`wrangler.jsonc` の `build.command` が使われる） | Deployments が Success。Settings → Domains & Routes に `ktkwmr.com/guitarchordfinder*` が出る（`wrangler.jsonc` の `routes` から自動設定。出なければ Add → Route で同じ値を追加） |
 | 2 | 本番の表示確認 | https://ktkwmr.com/guitarchordfinder/ と /ja/ を PC・スマホで開く。ホーム画面に追加して起動、機内モードで開けるか | 画面が出て、音が鳴り、オフラインで開ける |
 | 4 | Search Console | https://search.google.com/search-console → ktkwmr.com → サイトマップに `https://ktkwmr.com/guitarchordfinder/sitemap.xml` を送信。URL 検査で `/guitarchordfinder/` と `/guitarchordfinder/ja/` のインデックス登録をリクエスト | サイトマップが「成功しました」 |
 | 5 | GitHub の About | https://github.com/ktkwmr/GuitarChordFinder の右の ⚙（PC か「デスクトップ用 Web サイトを表示」）。Website: `https://ktkwmr.com/guitarchordfinder/`、Topics: `guitar` `chords` `alternate-tunings` `dadgad` `chord-finder` `pwa` `music` | About に URL と Topics が出る（Description は作成時に設定済み） |
-| 6 | 解析の確認 | 本番で DevTools → Network を `cloudflareinsights` で絞る | `beacon.min.js` と `rum` が 200/204 |
 | 7 | iPhone 実機 | 音が鳴るか（消音スイッチがオンだと鳴らないことがある）、ホーム画面アプリの見切れ | |
 | 8 | 日本語の検索用タイトル・説明の確認 | `scripts/build-ja.mjs` 冒頭の `TITLE` / `DESCRIPTION` | 直したいところを Claude に伝える |
 | 9 | X・LINE でカード表示 | URL を貼る | 画像付きカードが出る |
