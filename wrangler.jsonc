@@ -10,6 +10,8 @@
   // The domain root (/, robots.txt, the root sitemap.xml, 404 for other paths) stays in the ChordTransposer Worker.
   "routes": [{ "pattern": "ktkwmr.com/guitarchordfinder*", "zone_name": "ktkwmr.com" }],
   "workers_dev": false,
+  // workers_dev: false also turns off preview URLs; keep them on so each PR gets a URL to review
+  "preview_urls": true,
   "assets": {
     "directory": "./public",
     // Unknown URLs under /guitarchordfinder/ get public/404.html with status 404
