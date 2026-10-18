@@ -142,7 +142,7 @@
     @media (hover: hover) { .card:hover { border-color: var(--ink); } }
     .card.playing { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
     .card svg { width: 100%; max-width: 170px; height: auto; display: block; }
-    .card .tab { font-family: var(--mono); font-weight: 700; font-size: 15px; letter-spacing: .12em; }
+    .card .tab { font-family: var(--mono); font-weight: 700; font-size: 15px; white-space: nowrap; }
     .card .name { font-size: 12px; color: var(--muted); font-family: var(--mono); }
     .card .play { font-size: 11px; color: var(--subtle); }
     .card.none { cursor: default; color: var(--subtle); font-size: 12px; padding: 28px 12px; border-style: dashed; }
@@ -169,7 +169,7 @@
     .rev-left { border: 1px solid var(--line-strong); border-radius: 12px; padding: 10px; width: 180px; max-width: 100%; }
     .rev-left svg { width: 100%; height: auto; display: block; }
     .rev-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
-    .rev-tab { font-family: var(--mono); font-weight: 700; font-size: 18px; letter-spacing: .12em; }
+    .rev-tab { font-family: var(--mono); font-weight: 700; font-size: 18px; white-space: nowrap; }
     .rev-notes { font-family: var(--mono); font-size: 13px; color: var(--muted); }
     .rev-names { display: flex; flex-direction: column; gap: 6px; }
     .rev-names .main { font-size: 28px; font-weight: 700; line-height: 1.1; }
@@ -606,6 +606,8 @@
         return STD.map((s,i)=>{ for(let d=-6;d<=5;d++) if(((s+d)%12+12)%12===t[i]) return s+d; return s; });
       }
       function offsets(t){ return tuningMidi(t).map((m,i)=>m-STD[i]); }
+      // Shape as text, 6th string first: "x 3 2 0 1 0", "8 10 10 9 8 8"
+      function fmtTab(sh){ return sh.map(f=>f<0?"x":f).join(" "); }
       function fmtOff(d){ return d===0?"±0":(d>0?"+"+d:"−"+(-d)); }
       const REGIONS = [
         {id:"low", label:t("reg.low"), sub:t("reg.low.sub")},
@@ -882,7 +884,7 @@
           let idx=pick[reg.id]||0; if(idx>=list.length) idx=0;
           const r=list[idx];
           const b=document.createElement("button"); b.type="button"; b.className="card";
-          const tab=r.sh.map(f=>f<0?"x":(f>9?`(${f})`:f)).join("");
+          const tab=fmtTab(r.sh);
           const label=r.bassPc===state.root?name:`${name}/${spell(r.bassPc,state.root)}`;
           b.innerHTML=`${diagram(r.sh,r.barre,q)}<span class="tab">${tab}</span><span class="name">${label}</span><span class="play">${t("card.play")}</span>`;
           b.setAttribute("aria-label",t("card.aria",{region:reg.label,name:label,tab:tab}));
@@ -961,7 +963,7 @@
         const best=cands[0];
         buildBoard();
         saveState();
-        $("revTab").textContent=sh.map(f=>f<0?"x":(f>9?`(${f})`:f)).join("");
+        $("revTab").textContent=fmtTab(sh);
         $("revDiagram").innerHTML=diagram(sh,null,best?best.q:null,best?best.root:pcs[0]??0);
         $("revNotes").textContent=snd.length?t("rev.notes",{notes:snd.map(i=>SHARP[(tun[i]+sh[i])%12]).join(" ")}):t("rev.noNotes");
         const box=$("revNames"); box.innerHTML="";
