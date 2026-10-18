@@ -147,7 +147,12 @@
 
 ## 13〜15
 
-13（公開直前）・14（公開後）は 👤 待ち。15（AdSense）は未着手。
+| # | 項目 | 状態 | メモ |
+|---|---|---|---|
+| 13-1 | 本番デプロイ | ✅ | |
+| 13-4 | GitHub の About | ✅ | Description・Website・Topics 設定済み |
+
+13・14 のその他は 👤 待ち（下の表）。15（AdSense）は未着手。
 
 ## 人間の作業（未完了）
 
@@ -155,7 +160,6 @@
 |---|---|---|---|
 | 2 | 本番の表示確認 | https://ktkwmr.com/guitarchordfinder/ と /ja/ を PC・スマホで開く。ホーム画面に追加して起動、機内モードで開けるか | 画面が出て、音が鳴り、オフラインで開ける |
 | 4 | Search Console | https://search.google.com/search-console → ktkwmr.com → サイトマップに `https://ktkwmr.com/guitarchordfinder/sitemap.xml` を送信。URL 検査で `/guitarchordfinder/` と `/guitarchordfinder/ja/` のインデックス登録をリクエスト | サイトマップが「成功しました」 |
-| 5 | GitHub の About | https://github.com/ktkwmr/GuitarChordFinder の右の ⚙（PC か「デスクトップ用 Web サイトを表示」）。Website: `https://ktkwmr.com/guitarchordfinder/`、Topics: `guitar` `chords` `alternate-tunings` `dadgad` `chord-finder` `pwa` `music` | About に URL と Topics が出る（Description は作成時に設定済み） |
 | 7 | iPhone 実機 | 音が鳴るか（消音スイッチがオンだと鳴らないことがある）、ホーム画面アプリの見切れ | |
 | 8 | 日本語の検索用タイトル・説明の確認 | `scripts/build-ja.mjs` 冒頭の `TITLE` / `DESCRIPTION` | 直したいところを Claude に伝える |
 | 9 | X・LINE でカード表示 | URL を貼る | 画像付きカードが出る |
