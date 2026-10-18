@@ -25,7 +25,7 @@ import { fileURLToPath } from "node:url";
 import { renderPage, ORIGIN, APP_PATH, PUBLISHED, pagePath } from "./pages/layout.mjs";
 
 // Footer order
-const PAGES = [];
+const PAGES = ["guide", "alternate-tunings", "dadgad-chords", "open-g-chords", "open-d-and-drop-d-chords", "faq"];
 // Site information (operator and privacy policy)
 const INFO_PAGES = ["about", "privacy"];
 

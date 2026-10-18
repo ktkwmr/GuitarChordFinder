@@ -12,6 +12,7 @@ on:
       - "scripts/build-ja.mjs"
       - "scripts/build-pages.mjs"
       - "scripts/pages/**"
+      - "public/guitarchordfinder/chords.js"
   workflow_dispatch:
 
 permissions:
