@@ -72,9 +72,9 @@ export default {
 
 <h2 id="kinds">Three kinds of alternate tunings</h2>
 <ul>
-  <li><b>Drop tunings</b> lower only the 6th string (sometimes also the 1st). Drop D is the best known. Most chord shapes stay the same, and you get a lower bass note.</li>
-  <li><b>Open tunings</b> tune the open strings to a major chord, such as Open G, Open D, Open C, and Open E. A single finger or a slide across the strings plays a major chord.</li>
-  <li><b>Modal tunings</b> leave out the third of the chord, so the open strings are neither major nor minor. DADGAD is the most common.</li>
+  <li><b>Drop tunings</b> tune the 6th string a whole step lower than its usual place in the pattern. Drop D (only the 6th string lowered) is the best known; in Drop C or Drop B, all strings are lowered and the 6th string goes down one more step. Double drop D also lowers the 1st string. Most chord shapes on the other strings stay the same, and you get a lower bass note.</li>
+  <li><b>Open tunings</b> tune the open strings to a chord, usually a major chord: Open G, Open D, Open C, and Open E. A single finger or a slide across the strings then plays a major chord. Open minor tunings also exist, such as Open D minor (D A D F A D).</li>
+  <li><b>Modal tunings</b> (also called suspended or “sus” tunings) leave out the third of the chord, so the open strings are neither major nor minor. DADGAD is the most common. The name is customary and does not refer to the church modes.</li>
 </ul>
 
 <h2 id="list">Common tunings at a glance</h2>
@@ -85,6 +85,7 @@ ${tuningTable("en")}
 <ul>
   <li><b>Use a tuner</b>, and tune each string up to the note from slightly below. Strings stay in tune better than when you tune down to a note.</li>
   <li><b>Be careful when raising strings.</b> Tunings such as Open E raise strings above standard pitch and add tension to the strings and the neck. If you use such a tuning often, consider lighter strings, or use the same shapes a step lower (Open D) with a capo at the 2nd fret.</li>
+  <li><b>Lowering a lot needs care too.</b> Open C lowers the 6th string by four semitones (E to C). A slack string can buzz or sound flabby; heavier strings help if you use such a tuning often.</li>
   <li><b>Expect some drift.</b> After a big change, the strings stretch and the guitar goes slightly out of tune for a while. Check the tuning again after a few minutes.</li>
 </ul>
 
@@ -111,9 +112,9 @@ ${tuningTable("en")}
 
 <h2 id="kinds">変則チューニングの 3 つの種類</h2>
 <ul>
-  <li><b>ドロップチューニング</b>：6 弦だけ（ときには 1 弦も）を下げます。代表はドロップ D です。押さえ方はほとんど変わらず、低い音が出せます。</li>
-  <li><b>オープンチューニング</b>：開放弦をメジャーコードに合わせます。オープン G・オープン D・オープン C・オープン E など。指 1 本やスライドバーで全部の弦を押さえるとメジャーコードになります。</li>
-  <li><b>モーダルチューニング</b>：コードの 3 度の音を抜き、開放弦がメジャーでもマイナーでもない響きになります。代表は DADGAD です。</li>
+  <li><b>ドロップチューニング</b>：6 弦を、ほかの弦との関係より 1 音（全音）低く合わせます。代表は 6 弦だけを下げるドロップ D です。ドロップ C やドロップ B のように、全部の弦を下げたうえで 6 弦をさらに 1 音下げるものもあります。ダブルドロップ D は 1 弦も下げます。6 弦以外の押さえ方はほとんど変わらず、低い音が出せます。</li>
+  <li><b>オープンチューニング</b>：開放弦をコード（多くはメジャーコード）に合わせます。オープン G・オープン D・オープン C・オープン E など。指 1 本やスライドバーで全部の弦を押さえるとメジャーコードになります。オープン D マイナー（D A D F A D）のような、マイナーのオープンチューニングもあります。</li>
+  <li><b>モーダルチューニング</b>（サスペンデッド／sus チューニングとも呼ばれます）：コードの 3 度の音を抜き、開放弦がメジャーでもマイナーでもない響きになります。代表は DADGAD です。「モーダル」は慣用的な呼び名で、教会旋法（モード）とは直接関係ありません。</li>
 </ul>
 
 <h2 id="list">よく使われるチューニングの一覧</h2>
@@ -124,7 +125,8 @@ ${tuningTable("ja")}
 <ul>
   <li><b>チューナーを使い</b>、目的の音より少し下から上げて合わせます。上から下げて合わせるより狂いにくくなります。</li>
   <li><b>弦を上げるときは注意。</b>オープン E のように弦をスタンダードより高く上げるチューニングは、弦とネックに負担がかかります。よく使うなら細めの弦にするか、全音低いオープン D の押さえ方で 2 フレットにカポを付ける方法もあります。</li>
-  <li><b>しばらくは狂いやすい。</b>大きく音を変えた直後は弦が伸びて少しずつ音が下がります。数分たったらもう一度合わせ直してください。</li>
+  <li><b>大きく下げるときも注意。</b>オープン C は 6 弦を半音 4 つ（E → C）下げます。弦が緩みすぎると、ビビったり音がぼやけたりします。よく使うなら太めの弦にすると安定します。</li>
+  <li><b>しばらくは狂いやすい。</b>大きく音を変えた直後は、弦やネックがなじむまで音が少しずつ狂います。数分たったらもう一度合わせ直してください。</li>
 </ul>
 
 <h2 id="chords">新しいチューニングでコードを探す</h2>

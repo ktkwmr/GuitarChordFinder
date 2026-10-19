@@ -19,7 +19,7 @@ const EN = [
   },
   {
     q: "What do low, middle, and high mean?",
-    a: "They are positions on the neck. Low uses open strings (frets up to 4), middle is around frets 3 to 6, and high is fret 7 and up. The app shows up to six natural shapes in each; tap “Other shape” to see the next one.",
+    a: "They are positions on the neck. Low is shapes up to the 4th fret (often with open strings), middle is shapes starting at frets 3 to 6, and high is fret 7 and up. The app shows up to six natural shapes in each; tap “Other shape” to see the next one.",
   },
   {
     q: "Why is a chord missing in one position?",
@@ -66,7 +66,7 @@ const JA = [
   },
   {
     q: "ロー・ミドル・ハイとは何ですか？",
-    a: "ネックの上の位置（ポジション）です。ローは開放弦を使う形（4 フレットまで）、ミドルは 3〜6 フレット付近、ハイは 7 フレット以上です。それぞれ自然な押さえ方を最大 6 つ表示し、「別の形」で次の候補を見られます。",
+    a: "ネックの上の位置（ポジション）です。ローは 4 フレットまでの形（開放弦を使うことが多い）、ミドルは 3〜6 フレットから始まる形、ハイは 7 フレット以上です。それぞれ自然な押さえ方を最大 6 つ表示し、「別の形」で次の候補を見られます。",
   },
   {
     q: "あるポジションにコードが表示されないのはなぜですか？",

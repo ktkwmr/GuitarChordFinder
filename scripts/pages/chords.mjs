@@ -57,8 +57,8 @@ export function chordGrid(lang, tuning, chords) {
 // Table of shapes in all three positions
 export function shapeTable(lang, tuning, chords) {
   const H = lang === "ja"
-    ? ["コード", "ロー（開放弦）", "ミドル（3〜6 フレット）", "ハイ（7 フレット以上）"]
-    : ["Chord", "Low (open)", "Middle (frets 3–6)", "High (fret 7+)"];
+    ? ["コード", "ロー（4 フレットまで）", "ミドル（3〜6 フレットから）", "ハイ（7 フレット以上）"]
+    : ["Chord", "Low (to fret 4)", "Middle (from frets 3–6)", "High (fret 7+)"];
   const cell = (x) => (x ? `<td class="num">${GCF.fmtTab(x.sh)}</td>` : `<td class="dim">—</td>`);
   const rows = chords
     .map((name) => {

@@ -33,12 +33,12 @@ ${retuneList("en", T)}
 <p>The open strings make a ${openChord(T)} chord: there is no third (F# or F), so the sound is neither major nor minor. That is why DADGAD fits Celtic and folk music, fingerstyle playing, and songs in D or G. Shapes that leave some strings open let those open strings ring under the melody.</p>
 
 <h2 id="chords">Basic chords</h2>
-<p>These are the first shapes the app finds for each chord, mostly in the open position. The black dot is the lowest note; the letters in the dots are the intervals (R is the root). “x” means do not play that string.</p>
+<p>These are the first shapes the app finds for each chord, mostly up to the 4th fret. The black dot is the lowest note; the letters in the dots are the intervals (R is the root). “x” means do not play that string.</p>
 ${chordGrid("en", T, GRID)}
-<p>In the key of D, the most used chords are D (or D5 and Dsus4), G, A (or A7sus4), Bm, and Em7. Major G has no good open shape in DADGAD; play G/D, the 5th-fret shape, or Gmaj7 instead.</p>
+<p>In the key of D, the most used chords are D (or D5 and Dsus4), G, A (or A7sus4), Bm, and Em7. Major G has no shape up to the 4th fret in DADGAD. Around the 5th fret, play <code>x x 5 4 5 5</code>, or let the open 4th string ring with <code>5 5 0 4 5 x</code> (in the app, tap “Other shape”). G/D and Gmaj7 also work in its place.</p>
 
 <h2 id="table">More shapes in every position</h2>
-<p>The same chords in the low (open strings), middle (around frets 3–6), and high (fret 7 and up) positions. Numbers are frets from the 6th string to the 1st; “—” means the app found no natural shape there.</p>
+<p>The same chords in the low (up to fret 4, often with open strings), middle (starting at frets 3–6), and high (fret 7 and up) positions. Numbers are frets from the 6th string to the 1st; “—” means the app found no natural shape there.</p>
 ${shapeTable("en", T, TABLE)}
 
 <h2 id="tips">Tips</h2>
@@ -76,12 +76,12 @@ ${retuneList("ja", T)}
 <p>開放弦は ${openChord(T)} の和音です。3 度の音（F# や F）がないので、メジャーともマイナーともつかない響きになります。そのため、ケルト音楽やフォーク、フィンガースタイル、キーが D や G の曲によく合います。開放弦を残した押さえ方なら、メロディーの下で開放弦が鳴り続けます。</p>
 
 <h2 id="chords">基本のコード</h2>
-<p>アプリが最初に見つける押さえ方です（多くは開放弦ポジション）。黒い丸は最低音、丸の中の文字は度数（R がルート）です。「x」の弦は鳴らしません。</p>
+<p>アプリが最初に見つける押さえ方です（多くは 4 フレットまでのロー）。黒い丸は最低音、丸の中の文字は度数（R がルート）です。「x」の弦は鳴らしません。</p>
 ${chordGrid("ja", T, GRID)}
-<p>キー D でよく使うのは、D（または D5・Dsus4）、G、A（または A7sus4）、Bm、Em7 です。G のメジャーコードは DADGAD では開放弦ポジションに良い形がないので、G/D、5 フレットの形、または Gmaj7 で代わりに弾きます。</p>
+<p>キー D でよく使うのは、D（または D5・Dsus4）、G、A（または A7sus4）、Bm、Em7 です。G のメジャーコードは、DADGAD では 4 フレットまでの形がありません。5 フレット付近の <code>x x 5 4 5 5</code> か、開放の 4 弦を響かせる <code>5 5 0 4 5 x</code>（アプリでは「別の形」で表示）で弾きます。G/D や Gmaj7 で代わりに弾くこともできます。</p>
 
 <h2 id="table">ポジション別の押さえ方</h2>
-<p>同じコードを、ロー（開放弦）・ミドル（3〜6 フレット付近）・ハイ（7 フレット以上）のポジションごとにまとめました。数字は 6 弦から 1 弦までのフレット、「—」はアプリが自然な押さえ方を見つけられなかったところです。</p>
+<p>同じコードを、ロー（4 フレットまで。開放弦を使うことが多い）・ミドル（3〜6 フレットから）・ハイ（7 フレット以上）のポジションごとにまとめました。数字は 6 弦から 1 弦までのフレット、「—」はアプリが自然な押さえ方を見つけられなかったところです。</p>
 ${shapeTable("ja", T, TABLE)}
 
 <h2 id="tips">弾くときのコツ</h2>
