@@ -33,11 +33,13 @@ ${retuneList("en", T)}
 <p>Because the open strings make a major chord, laying one finger (or a slide) across all strings at any fret gives another major chord: the 5th fret is C and the 7th fret is D. With G at the open strings, that is the I, IV, and V chords of the key of G — enough for many songs.</p>
 
 <h2 id="chords">Basic chords</h2>
-<p>These are the first shapes the app finds for each chord, mostly in the open position. The black dot is the lowest note; the letters in the dots are the intervals (R is the root). “x” means do not play that string.</p>
+<p>These are the first shapes the app finds for each chord, mostly up to the 4th fret. The black dot is the lowest note; the letters in the dots are the intervals (R is the root). “x” means do not play that string.</p>
 ${chordGrid("en", T, GRID)}
 
+<p><b>About G:</b> the app's G (<code>x 0 0 0 0 0</code>) leaves out the 6th string so that G is the lowest note. In practice, strumming all six open strings (G/D, with D in the bass) is the most common way to play G in Open G; the low D is part of its sound.</p>
+
 <h2 id="table">More shapes in every position</h2>
-<p>The same chords in the low (open strings), middle (around frets 3–6), and high (fret 7 and up) positions. Numbers are frets from the 6th string to the 1st; “—” means the app found no natural shape there.</p>
+<p>The same chords in the low (up to fret 4, often with open strings), middle (starting at frets 3–6), and high (fret 7 and up) positions. Numbers are frets from the 6th string to the 1st; “—” means the app found no natural shape there.</p>
 ${shapeTable("en", T, TABLE)}
 
 <h2 id="tips">Tips</h2>
@@ -75,11 +77,13 @@ ${retuneList("ja", T)}
 <p>開放弦がメジャーコードなので、どのフレットでも指 1 本（またはスライドバー）で全部の弦を押さえれば、別のメジャーコードになります。5 フレットなら C、7 フレットなら D です。開放の G と合わせて、キー G の I・IV・V がそろうので、これだけで弾ける曲もたくさんあります。</p>
 
 <h2 id="chords">基本のコード</h2>
-<p>アプリが最初に見つける押さえ方です（多くは開放弦ポジション）。黒い丸は最低音、丸の中の文字は度数（R がルート）です。「x」の弦は鳴らしません。</p>
+<p>アプリが最初に見つける押さえ方です（多くは 4 フレットまでのロー）。黒い丸は最低音、丸の中の文字は度数（R がルート）です。「x」の弦は鳴らしません。</p>
 ${chordGrid("ja", T, GRID)}
 
+<p><b>G について：</b>アプリの G（<code>x 0 0 0 0 0</code>）は、最低音を G にするため 6 弦を鳴らさない形です。実際には、6 本の開放弦を全部鳴らす形（G/D、ベースが D）が、オープン G で最もよく使われる G の弾き方です。低い D の音も、このチューニングらしい響きの一部です。</p>
+
 <h2 id="table">ポジション別の押さえ方</h2>
-<p>同じコードを、ロー（開放弦）・ミドル（3〜6 フレット付近）・ハイ（7 フレット以上）のポジションごとにまとめました。数字は 6 弦から 1 弦までのフレット、「—」はアプリが自然な押さえ方を見つけられなかったところです。</p>
+<p>同じコードを、ロー（4 フレットまで。開放弦を使うことが多い）・ミドル（3〜6 フレットから）・ハイ（7 フレット以上）のポジションごとにまとめました。数字は 6 弦から 1 弦までのフレット、「—」はアプリが自然な押さえ方を見つけられなかったところです。</p>
 ${shapeTable("ja", T, TABLE)}
 
 <h2 id="tips">弾くときのコツ</h2>

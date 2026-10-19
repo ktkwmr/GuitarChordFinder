@@ -11,6 +11,9 @@
   const FLAT_ROOTS = new Set([1,3,5,8,10]);
   // Shapes are searched up to this fret, with the root (or the chosen slash-chord bass) as the lowest note
   const MAX_FRET = 14;
+  // Score added for each open string above the lowest fretted string in the middle/high positions
+  // (high enough that the usual fully fretted shape stays first; ringing-open shapes follow or fill empty positions)
+  const INNER_OPEN_COST = 2.5;
 
   // iv: chord tones (semitones), opt: tones that may be left out, deg: interval labels
   const QUALS = [
@@ -134,9 +137,12 @@
       //  - a lower string fretted 3 or more frets above a higher string (hard on the wrist)
       const frIdx=sounding.filter(i=>sh[i]>0);
       // In the middle/high positions, fret 3 or more notes and use open strings only as a drone on the bass side
+      // Open strings above the lowest fretted string ring with the fretted notes (e.g. DADGAD G: 5 5 0 4 5 5).
+      // They are allowed, with a small cost so fully fretted shapes still come first when both are good.
+      let innerOpen=0;
       if(region!=="low"){
         if(frIdx.length<3) return;
-        for(let i=frIdx[0];i<6;i++) if(sh[i]===0) return;
+        for(let i=frIdx[0];i<6;i++) if(sh[i]===0) innerOpen++;
       }
       for(let i=0;i<frIdx.length;i++) for(let j=i+1;j<frIdx.length;j++)
         if(sh[frIdx[i]]-sh[frIdx[j]]>=3) return;
@@ -168,6 +174,7 @@
         + (bassPc===bassTarget?0:6) + (thirdMissing?6:0);
       // In the middle/high positions, the position itself is not penalized (shapes are compared within the position)
       if(region!=="low") score-=pos*0.5 - opens*1.4;
+      score+=innerOpen*INNER_OPEN_COST;
       if(sounding.length<5) score+=1.5;
       // Close intervals (3 semitones or less) low in the bass sound muddy (e.g. F#2 and A2)
       const mids=tuningMidi(tun);
@@ -187,16 +194,41 @@
   }
 
   // ---------- Naming a shape ----------
+  // Chord names for the sounding notes, best first. pcsArr: pitch classes of the sounding strings; bassPc: the lowest one.
+  // Scoring (lower is better): an inversion with the 3rd or 5th in the bass (D/F#) costs less than one with
+  // the 7th or a tension in the bass; a bass note that is not a chord tone and sounds only in the bass is
+  // named as "upper chord / bass" (G/C, Am/G).
+  const BASS_IN_TRIAD = [3, 4, 6, 7, 8];   // ♭3, 3, ♭5, 5, ♯5 above the root
   function identify(pcsArr,bassPc){
     const set=[...new Set(pcsArr)];
     const out=[];
+    const fits=(notes,q,r)=>{
+      const need=q.iv.filter(i=>!(q.opt||[]).includes(i)).map(i=>(r+i)%12);
+      const all=q.iv.map(i=>(r+i)%12);
+      return notes.every(p=>all.includes(p)) && need.every(p=>notes.includes(p)) ? all : null;
+    };
+    const base=(q,all,notes)=>(all.length-notes.length)+q.iv.length*0.1+(q.rare?1.5:0);
     for(const r of ROOTS){
       for(const q of ALLQ){
-        const need=q.iv.filter(i=>!(q.opt||[]).includes(i)).map(i=>(r+i)%12);
-        const all=q.iv.map(i=>(r+i)%12);
-        if(set.every(p=>all.includes(p)) && need.every(p=>set.includes(p))){
-          let n=spell(r,r)+q.id; if(bassPc!==r) n+="/"+spell(bassPc,r);
-          out.push({n,root:r,q,score:(bassPc===r?0:2)+(all.length-set.length)+q.iv.length*0.1+(q.rare?1.5:0)});
+        const all=fits(set,q,r);
+        if(!all) continue;
+        let n=spell(r,r)+q.id, slash=0;
+        if(bassPc!==r){
+          n+="/"+spell(bassPc,r);
+          slash=BASS_IN_TRIAD.includes(((bassPc-r)%12+12)%12)?2:3;
+        }
+        out.push({n,root:r,q,score:slash+base(q,all,set)});
+      }
+    }
+    // The bass note sounds only in the bass: name the chord above it, over that bass
+    const i=pcsArr.indexOf(bassPc);
+    const upper=[...new Set(pcsArr.filter((p,k)=>k!==i))];
+    if(!upper.includes(bassPc) && upper.length>=3){
+      for(const r of ROOTS){
+        for(const q of ALLQ){
+          const all=fits(upper,q,r);
+          if(!all || all.includes(bassPc)) continue;
+          out.push({n:spell(r,r)+q.id+"/"+spell(bassPc,r),root:r,q,over:bassPc,score:2+base(q,all,upper)});
         }
       }
     }

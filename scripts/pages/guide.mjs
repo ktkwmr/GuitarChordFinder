@@ -75,7 +75,7 @@ export default {
 </ul>
 
 <h2 id="positions">Low, middle, and high positions</h2>
-<p>Shapes are grouped by where they sit on the neck: <b>low</b> uses open strings (up to the 4th fret), <b>middle</b> is around frets 3 to 6, and <b>high</b> is the 7th fret and up. Comparing them helps you choose a shape that is close to the next chord in a song.</p>
+<p>Shapes are grouped by where they sit on the neck: <b>low</b> is up to the 4th fret (often with open strings), <b>middle</b> starts at frets 3 to 6, and <b>high</b> is the 7th fret and up. Comparing them helps you choose a shape that is close to the next chord in a song.</p>
 <p>The app keeps only shapes that are natural to play: four fingers or fewer (a barre counts as one), within four frets, with the strings you play next to each other, and with the root (or the chosen bass note) as the lowest note. When a position has no such shape, it says so — try another position, a slash chord, or a capo.</p>
 
 <h2 id="reverse">Name a chord from a shape</h2>
@@ -150,7 +150,7 @@ export default {
 </ul>
 
 <h2 id="positions">ロー・ミドル・ハイのポジション</h2>
-<p>押さえ方は、ネックのどこで押さえるかでまとめています。<b>ロー</b>は開放弦を使う形（4 フレットまで）、<b>ミドル</b>は 3〜6 フレット付近、<b>ハイ</b>は 7 フレット以上です。比べてみると、曲の中で次のコードに移りやすい形を選べます。</p>
+<p>押さえ方は、ネックのどこで押さえるかでまとめています。<b>ロー</b>は 4 フレットまでの形（開放弦を使うことが多い）、<b>ミドル</b>は 3〜6 フレットから始まる形、<b>ハイ</b>は 7 フレット以上です。比べてみると、曲の中で次のコードに移りやすい形を選べます。</p>
 <p>アプリが表示するのは、自然に弾ける形だけです。押さえる指は 4 本まで（セーハは 1 本と数えます）、4 フレットの幅に収まること、鳴らす弦が隣り合っていること、最低音がルート（または選んだベースの音）であることが条件です。条件に合う形がないポジションにはその旨を表示します。別のポジション、分数コード、カポを試してください。</p>
 
 <h2 id="reverse">押さえ方からコード名を調べる</h2>
