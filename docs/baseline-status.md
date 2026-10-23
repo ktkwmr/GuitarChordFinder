@@ -27,7 +27,7 @@
 | # | 項目 | 状態 | メモ |
 |---|---|---|---|
 | 2-1 | wrangler.jsonc | ✅ | `routes` と `workers_dev: false` を追加（§0 の A） |
-| 2-2 | `/` → `/<slug>/` の転送 | — | ドメイン直下は ChordTransposer 側。このアプリでは `_redirects` を置かない |
+| 2-2 | `/` → `/<slug>/` の転送 | — | ドメイン直下は `ktkwmr/ktkwmr.com`（2026-10-24 に ChordTransposer から分離）。このアプリでは `_redirects` を置かない |
 | 2-3 | 404.html | ✅ | `/guitarchordfinder/` 以下の不明な URL に使われる |
 | 2-4 | .gitignore | ✅ | |
 | 2-5 | .gitattributes（LF） | ✅ | |
@@ -71,7 +71,7 @@
 | 5-3 | OGP | ✅ | |
 | 5-4 | og-image.png | ✅ | `scripts/og-image.html` |
 | 5-5 | JSON-LD | ✅ | |
-| 5-6 | robots.txt / sitemap.xml | ✅ | sitemap は `/guitarchordfinder/sitemap.xml` に生成。ChordTransposer の `robots.txt` に Sitemap 行を追加済み（ktkwmr/ChordTransposer#19） |
+| 5-6 | robots.txt / sitemap.xml | ✅ | sitemap は `/guitarchordfinder/sitemap.xml` に生成。Sitemap 行は ChordTransposer の `robots.txt` に追加（ChordTransposer #19）。2026-10-24 から `ktkwmr/ktkwmr.com` の `robots.txt` に記載 |
 | 5-7 | `<h1>` | ✅ | ツールバーのアプリ名 |
 | 5-8 | 画面に見える説明文 | ✅ | 冒頭の説明（無料・登録不要・オフライン） |
 | 5-9 | リダイレクト | ✅ | |
