@@ -61,7 +61,7 @@ export default {
   <li><b>Mode</b> – “Chord → shapes” finds shapes for a chord; “Shape → chord” names the chord you press (see <a href="#reverse">below</a>).</li>
   <li><b>Chord diagram</b> – Tap it to hear the shape.</li>
   <li><b>Other shape</b> – Shows the next shape in the same position. Up to six shapes are shown, best first.</li>
-  <li><b>⚙ Settings</b> – How to use, these guides, privacy, and about.</li>
+  <li><b>⚙ Settings</b> – How to use, these guides, privacy, about, and More apps (other free tools by the same author) (the guides and More apps open in a new tab, so your work stays as it is).</li>
 </ol>
 <p>Your tuning, chord, and other settings are saved in your browser, so the app opens where you left off.</p>
 
@@ -136,7 +136,7 @@ export default {
   <li><b>モード</b> – 「コード → 押さえ方」でコードの押さえ方を探し、「押さえ方 → コード」で押さえた形のコード名を調べます（<a href="#reverse">下記</a>）。</li>
   <li><b>ダイアグラム</b> – 押すと音が鳴ります。</li>
   <li><b>別の形</b> – 同じポジションの次の押さえ方を表示します。良い順に最大 6 つです。</li>
-  <li><b>⚙ 設定</b> – 使い方、このガイド、プライバシー、このアプリについて。</li>
+  <li><b>⚙ 設定</b> – 使い方、このガイド、プライバシー、このアプリについて、ほかのアプリ（同じ作者の無料ツール）（ガイドとほかのアプリは新しいタブで開くので、作業中の内容はそのまま残ります）。</li>
 </ol>
 <p>チューニングやコードなどの設定はブラウザに保存されるので、次に開いたときも続きから使えます。</p>
 
