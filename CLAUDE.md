@@ -25,6 +25,7 @@
 - コードの計算（探索・コード名・ダイアグラム）は `public/guitarchordfinder/chords.js` にあり、アプリと記事（`scripts/pages/chords.mjs`）が共用する。記事のコード表は手で書かず、これで計算する。
 - アプリの下のフッター（`index.html` の `foot.guides`、英日）に記事の一覧を手で書いている（このアプリはアプリの下の説明に記事の一覧がないため。ベースライン §9-14）。記事を追加・改名・削除したら、ここも直す。
 - 記事を追加・変更したら、PR のプレビューで人間が内容を確認してからマージする（ベースライン §10-7）。確認してほしい点を `docs/article-review.md` に書き、PR 本文にも載せる。見た目を変えたら `node scripts/render-guide-images.mjs` で画面写真を撮り直す。
+- 利用状況の計測（Cloudflare Zaraz → GA4、同意バナーで同意した人だけ。ベースライン §17）: `usage-events.js`（ベースラインの雛形のコピー。タップ `gcf_tap`・設定の変更 `gcf_change`・滞在時間 `gcf_engaged`）と、主な機能の `track()`（`index.html` の `renderResults()`・`renderRev()`・コードの再生。チップには `data-track`（`root:G`・`qual:m7`・`preset:<名前>` など））。チューニング・コード名・数より詳しいことは送らない（利用者が入力する文字はない）。イベントを足したら `docs/analytics.md` の表と GA4 のカスタム定義、送る内容を変えたらプライバシーの説明も直す。
 - 外部ホストを足したら `public/_headers` の CSP と、プライバシーの説明（`scripts/pages/privacy.mjs`、アプリ内の `privacy.body`、README）を同じ PR で直す。
 - トップページ（https://ktkwmr.com/）のアプリ一覧に、このアプリの名前・説明・特徴・ガイド記事の一覧を載せている（`ktkwmr/ktkwmr.com` の `scripts/pages/home.mjs` の `APPS`。アイコンは `ICON`。`public/robots.txt` の `Sitemap:` 行も）。ガイド記事を追加・改名・削除したとき、アプリ名・説明・アイコンを変えたときは、`ktkwmr/ktkwmr.com` に `home.mjs` を直す PR を別に出す（ベースライン §2-16）。
 - 作業はブランチ → PR → Cloudflare のプレビュービルド確認 → squash マージ。
